@@ -219,7 +219,7 @@ def fig_Train_sales_Correlation(train):
     a = pd.pivot(a, index="ind", columns="store_nbr", values="sales").corr()
 
     mask = np.triu(a.corr())
-    fig, ax = plt.subplots(1, 1, figsize=(20, 20))
+    fig, ax = plt.subplots(1, 1, figsize=(15, 10))
     sns.heatmap(a, annot=True, fmt=".1f", cmap="coolwarm", square=True, mask=mask, linewidths=1, cbar=False)
     plt.title("Correlation among stores", fontsize=20)
     st.pyplot(fig)
